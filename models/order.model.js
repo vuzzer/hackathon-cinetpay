@@ -58,6 +58,15 @@ class Order {
     return this.transformOrderDocuments(orders);
   }
 
+  static async updateOne(orderId, status) {
+    const order = await db
+      .getDb()
+      .collection('orders')
+      .updateOne({ _id: new mongodb.ObjectId(orderId) }, { $set: { status: status } });
+
+    return this.transformOrderDocument(order);
+  }
+
   static async findById(orderId) {
     const order = await db
       .getDb()

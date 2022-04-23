@@ -1,8 +1,9 @@
 const buttonForBuy = document.querySelector('.btn.btn-finaliser-commande');
 
+const productId = buttonForBuy.dataset.productid;
+const csrfToken = buttonForBuy.dataset.csrf;
+
 async function buy() {
-  const productId = buttonForBuy.dataset.productid;
-  const csrfToken = buttonForBuy.dataset.csrf;
 
   let response;
   try {
@@ -28,7 +29,7 @@ async function buy() {
 
   const responseData = await response.json();
 
-  console.log(responseData);
+  console.log(responseData.order);
   checkout(responseData.order);
 
 }
@@ -61,11 +62,23 @@ async function checkout(responseData) {
         customer_zip_code : responseData.userData.address.postalCode, // code postal
 
     });
-    CinetPay.waitResponse(function(data) {
+    CinetPay.waitResponse(async function(data) {
         if (data.status == "REFUSED") {
           window.location.replace("http://localhost:3000/echec");
         } else if (data.status == "ACCEPTED") {
           window.location.replace("http://localhost:3000/success");
+
+          response = await fetch('/orders/buy', {
+            method: 'POST',
+                body: JSON.stringify({
+                  _csrf : csrfToken,
+                  order: responseData
+                }),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
+
         }
     });
     CinetPay.onError(function(data) {
