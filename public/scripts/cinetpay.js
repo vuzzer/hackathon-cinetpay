@@ -65,7 +65,7 @@ async function checkout(responseData) {
         if (data.status == "REFUSED") {
           window.location.replace("http://localhost:3000/echec");
         } else if (data.status == "ACCEPTED") {
-          window.location.replace("http://localhost:3000/succes");
+          window.location.replace("http://localhost:3000/success");
         }
     });
     CinetPay.onError(function(data) {
