@@ -1,17 +1,24 @@
+
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light ">
-            <!-- Container wrapper -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+              <a class="navbar-brand" href="#!">
+                <img class="navbar--logo" src="/assets/logoesatic.png" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
             
-            <a class="navbar-brand mt-2 mt-lg-0 " href="/">
-                <img
-                    src="/images/navbar/logo-navbar.jpeg"
-                   
-                    alt="logo e shop"
-                    loading="lazy"
-                />
-                </a>
-                
-           
+                  
+            
             <div class="search-content mx-auto d-md-block d-none">
                 <div class="pseudo-search">
                     <input type="text" placeholder="rechercher un produit..." autofocus required>
@@ -21,18 +28,33 @@
                   </div>
             </div>
             
-           
-
-            <div class="d-flex align-items-center navbar-item-contenair" >
-             
-                <a class="text-reset me-5" href="/cart">Mon panier
-                   <span class="d-none d-md-inline" id="panier"> <%= locals.cart.totalQuantity %></span> 
-                  <i class="fas fa-shopping-cart"></i>
+      
+              <div class="d-flex align-items-center navbar-item-contenair" >
+                   
+                <a class="text-reset me-5 navbar--link" href="/">
+                   <span class="d-none d-md-inline" >Accueil</span> 
+                
                 </a>
-        
+      
+                <a class="text-reset me-5 navbar--link" href="/about">
+                  <span class="d-none d-md-inline" >A propos</span> 
+               
+               </a>
+      
+               <a class="text-reset me-5 navbar--link" href="/cart">
+                <span class="d-none d-md-inline" >Mon panier <i id="panier"> <%= locals.cart.totalQuantity %> </i> </span> 
+               <i class="fas fa-shopping-cart"></i>
+              </a>
+      
+              
+              <a class="text-reset me-5 navbar--link" href="/pages/connexion.html">
+                <span class="d-none d-md-inline" >Connexion</span> 
+            
+              </a>
+      
                 <div class="dropdown">
                 <a
-                    class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                    class="dropdown-toggle d-flex align-items-center hidden-arrow navbar--link"
                     href="#"
                     id="navbarDropdownMenuAvatar"
                     role="button"
@@ -40,37 +62,27 @@
                     aria-expanded="false"
                 >
                 <span class="d-none d-md-block text-dark" >Mon compte</span>
-                <i class="fas fa-user mx-1"></i>
+                
                 </a>
                 <ul
                     class="dropdown-menu dropdown-menu-end"
                     aria-labelledby="navbarDropdownMenuAvatar"
                 >
+                    
+                      <li>
+                        <a class="dropdown-item" href="/pages/profil.html">Mon profil</a>
+                        </li>
                     <li>
-                    <a class="dropdown-item" href="/profil">Mon profil</a>
+                    <a class="dropdown-item" href="/pages/commandes.html">Mes commandes</a>
                     </li>
                     <li>
-                    <a class="dropdown-item" href="/orders">Mes commandes</a>
+                    <a class="dropdown-item" href="#">Mon historique</a>
                     </li>
                     <li>
-                    <a class="dropdown-item" href="/logout">Deconnexion</a>
+                    <a class="dropdown-item" href="#">Deconnexion</a>
                     </li>
                 </ul>
                 </div>
             </div>
-            
             </div>
-            
-        </nav>
-
-        <div class="mx-auto text-center d-md-none d-block mt-5">
-          
-          <div class="search-content-hors-nav mx-auto ">
-            <div class="pseudo-search">
-                <input type="text" placeholder="rechercher un produit..." autofocus required>
-                
-                <i class="fa fa-globe places"></i>
-                <button class="fa fa-search" type="submit"></button>
-              </div>
-          </div>
-        </div>
+          </nav>

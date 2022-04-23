@@ -10,7 +10,7 @@
     <meta name="author" content="" />
     <title>Shop Hackathon - 2022</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="public/assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"
@@ -29,99 +29,42 @@
   <body>
 
     <!-- Navigation-->
-    <%- include('../../shared/include/header') %>
+    <%- include('shared/include/header') %>
     <!-- Header-->
 
 
-    <header class="bg-dark">
-   
 
-      <!-- Carousel wrapper -->
-      <div id="carouselBasicExample" class="carousel carousel-header  slide carousel-fade" data-mdb-ride="carousel">
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-mdb-target="#carouselBasicExample"
-            data-mdb-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-mdb-target="#carouselBasicExample"
-            data-mdb-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-mdb-target="#carouselBasicExample"
-            data-mdb-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-
-        <!-- Inner -->
-        <div class="carousel-inner">
-          <!-- Single item -->
-          <div class="carousel-item active">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100" alt="Sunset Over the City"/>
-            <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-          </div>
-
-          <!-- Single item -->
-          <div class="carousel-item">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp" class="d-block w-100" alt="Canyon at Nigh"/>
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-          </div>
-
-          <!-- Single item -->
-          <div class="carousel-item">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp" class="d-block w-100" alt="Cliff Above a Stormy Sea"/>
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Inner -->
-
-        <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-      <!-- Carousel wrapper -->
-
-
-    </header>
-
-    
 
     <!-- Section-->
     <section class="py-5">
-      <div class="container px-4 px-lg-5 mt-5">
-        <h2 class="font-weight-bold text-uppercase py-3 text-center mb-3" >
-          Nos Produits
-        </h2>
-        <div
-          class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
-        >
-        <% for (const product of products) { %>
-          <%- include('../../shared/include/product-item' , {product: product}) %>
-          <% } %>
+      <div class="container px-4 px-lg-5 mt-3 mb-1">
+        <div class="alert alert-success" role="alert">
+            
+            <h3 class="font-weight-bold text-uppercase text-center pb-5">
+                Transaction effectuée avec Succes
+            </h3>
+            
+            <div class="mx-auto text-center">
+                <p>
+                    Votre transaction
+                    <strong>
+                        identifiant transaction
+                    </strong> 
+                    a été bien effectué 
+                </p>
+            </div>
+            <div class="mx-auto text-center">
+                <a href="/" class="btn mx-auto mt-3 px-5 py-3">
+                    Retourner à l'accueil
+                </a>
+            </div>
+           
+
+
+        </div>
+      
+
+      </div>
     </section>
  
      <!-- footer -->
@@ -229,6 +172,6 @@
     <!-- Core theme JS-->
     <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"></script>
-    <script src="public/js/scripts.js"></script>
+    <script src="../public/js/scripts.js"></script>
   </body>
 </html>

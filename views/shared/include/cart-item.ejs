@@ -11,7 +11,7 @@
                     </button>
                 </div>
                 <div class="col-md-2 img-container">
-                    <img src="<%= item.product.imageUrl %>" alt="<%= item.product.title %>"  class="img-fluid"/>
+                    <img src="<%= item.product.thumbnail %>" alt="<%= item.product.title %>"  class="img-fluid"/>
                 </div>
 
                 <div class="col-md-7 col-panier-detail">
@@ -51,9 +51,5 @@
                 </div>
 
             </div>
-            <div class="finaliser-commande-container">
-                <button class="btn btn-finaliser-commande" data-productid="<%= item.product.id %>" data-csrf="<%= locals.csrfToken %>" >
-                    Commander maintenant
-                </button>
-            </div>      
+               
         </div>

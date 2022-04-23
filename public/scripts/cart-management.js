@@ -22,9 +22,7 @@ async function addToCart() {
     return;
   }
 
-  if(response.url){
-    window.location.replace(response.url);
-  }
+
   
 /*   if (!response.ok) {
     alert('Something went wrong!');

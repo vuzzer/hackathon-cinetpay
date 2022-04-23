@@ -63,13 +63,9 @@ async function checkout(responseData) {
     });
     CinetPay.waitResponse(function(data) {
         if (data.status == "REFUSED") {
-            if (alert("Votre paiement a échoué")) {
-                window.location.reload();
-            }
+          window.location.replace("http://localhost:3000/echec");
         } else if (data.status == "ACCEPTED") {
-            if (alert("Votre paiement a été effectué avec succès")) {
-                window.location.reload();
-            }
+          window.location.replace("http://localhost:3000/succes");
         }
     });
     CinetPay.onError(function(data) {
